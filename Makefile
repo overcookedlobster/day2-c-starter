@@ -2,8 +2,8 @@
 
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
-TARGETS = q1_basic_gdb/basic q2_seg_fault/memory q3_logic_error/validation
-TESTS = tests/test_basic tests/test_memory tests/test_validation
+TARGETS = q1_basic_gdb/basic q2_seg_fault/memory q3_logic_error/validation q4_data_corruption/data
+TESTS = tests/test_basic tests/test_memory tests/test_validation tests/test_data
 
 all: $(TARGETS) $(TESTS)
 	@echo "✓ all day 2 programs compiled successfully!"
@@ -26,11 +26,15 @@ tests/test_memory: tests/test_memory.c q2_seg_fault/memory.c q2_seg_fault/memory
 tests/test_validation: tests/test_validation.c q3_logic_error/validation.c q3_logic_error/validation.h
 	$(CC) $(CFLAGS) -DUNIT_TEST -o $@ tests/test_validation.c q3_logic_error/validation.c
 
+tests/test_data: tests/test_data.c q4_data_corruption/data.c q4_data_corruption/data.h
+	$(CC) $(CFLAGS) -DUNIT_TEST -o $@ tests/test_data.c q4_data_corruption/data.c
+
 test: $(TESTS)
 	@echo "Running tests..."
 	@./tests/test_basic || true
 	@./tests/test_memory || true
 	@./tests/test_validation || true
+	@./tests/test_data || true
 
 clean:
 	rm -f $(TARGETS) $(TESTS) *.o *~

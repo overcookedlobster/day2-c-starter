@@ -6,6 +6,7 @@ This repository contains starter templates for Day 2 exercises focused on using 
 - `q1_basic_gdb/`: Basic GDB usage for inspecting variables
 - `q2_seg_fault/`: Debugging segmentation faults
 - `q3_logic_error/`: Finding logic errors with breakpoints
+- `q4_data_corruption/`: Debugging data corruption (uninitialized variables)
 - `tests/`: Test executables for automated grading
 - `Makefile`: Build all exercises and tests
 
@@ -29,6 +30,10 @@ Complete each exercise by using GDB to identify bugs in the provided starter cod
 ### Q3: Logic Error Hunt
 - File: `q3_logic_error/validation.c`
 - Objective: Use conditional breakpoints to find incorrect power validation logic
+
+### Q4: Data Corruption Debug
+- File: `q4_data_corruption/data.c`
+- Objective: Use GDB to fix uninitialized variable causing garbage data in hardware processing
 
 ## Building and Testing
 ```bash

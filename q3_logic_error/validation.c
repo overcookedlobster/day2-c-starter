@@ -13,8 +13,8 @@
 #include "validation.h"
 
 int is_valid_power(float power) {
-    // TODO: Debug this - the condition uses < instead of <=, so power == 5.0f returns 0 (invalid)
-    if (power < 5.0f) {  // Bug: Should be <= 5.0f to include the limit
+    // TODO: Debug this - check the condition for exact limit (5.0f)
+    if (power < 5.0f) {
         return 1;  // Valid
     } else {
         return 0;  // Invalid

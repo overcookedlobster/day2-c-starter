@@ -15,8 +15,8 @@
 float read_voltage_sensor(int sensor_id) {
     float voltages[5] = {1.8f, 2.0f, 2.5f, 3.0f, 3.3f};  // Valid sensors 0-4
 
-    // TODO: Debug this - no bounds check, and main calls with sensor_id=5 causing segfault
-    return voltages[sensor_id];  // Bug: No check if sensor_id < 0 or >=5
+    // TODO: Debug this - add bounds check for sensor_id (0-4 valid)
+    return voltages[sensor_id];
 }
 
 #ifndef UNIT_TEST
