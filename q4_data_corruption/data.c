@@ -11,7 +11,7 @@
 #include "data.h"
 
 int process_data(int value) {
-    int result = 0; // Fixed: Initialize to 0 to prevent garbage values
+    int result; // TODO: Initialize the variable to prevent garbage values
     if (value > 0) {
         result = value * 2;
     }
